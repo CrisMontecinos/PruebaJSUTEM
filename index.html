@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JS UTEM</title>
+    <script src="./jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap-5.2.1-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./pokemon.js"></script>
+    <script src="./manipulacion_datos.js"></script>
+    <script src="./manipulacion_dom.js"></script>
+</head>
+<body class="container mt-4">
+    <a class="btn btn-primary mb-3" href="./mixta.html">Ir a segunda parte de la prueba (mixta)</a>
+    <h1>Cantidad de celdas: <b>9</b></h1>
+    <button class="btn btn-primary" onclick=pintar_columnas()>Pintar bordes columnas</button>
+    <button class="btn btn-primary"  onclick=pintar_textos()>Pintar textos filas</button>
+    <button class="btn btn-primary"  onclick=invertir_textos()>Invertir textos</button>
+    <div class="mb-3 mt-3 row">
+        <div class="col-3">
+            <input class="form-control" type="text" placeholder="Ingrese celda">
+        </div>
+        <button class="btn btn-danger col-3">Borrar celda</button>
+    </div>
+    <button class="btn btn-primary col-3 mb-3">Agregar celda</button>
+    <div class="row">
+        <div class="col-4 border">contenedor 1</div>
+        <div class="col-4 border">contenedor 2</div>
+        <div class="col-4 border">contenedor 3</div>
+        <div class="col-4 border">contenedor 4</div>
+        <div class="col-4 border">contenedor 5</div>
+        <div class="col-4 border">contenedor 6</div>
+        <div class="col-4 border">contenedor 7</div>
+        <div class="col-4 border">contenedor 8</div>
+        <div class="col-4 border">contenedor 9</div>
+    </div>
+</body>
+</html>
