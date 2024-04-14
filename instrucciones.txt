@@ -13,6 +13,3 @@ Para la manipulación mixta se debe limpiar el listado cada vez que se genere un
 
 En las preguntas de manipulación de datos: ojo con la diferencia entre tipo y tipo exclusivo.
 En el archivo pokemon.js se encuentra la data de todos los pokemon.
-
-
-PLAZO MAXIMO: MIERCOLES 14 A LAS 11:00 HRS
