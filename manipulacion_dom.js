@@ -81,16 +81,71 @@ function invertir_textos(params) {
 
 // 4) Borrar celda seleccionada, debe restringir por el limite de celdas y no funcionar cuando queden 0
 function borrar_celda(params) {
+    console.log("borrar celda");
+
+    // Obtener el valor del input
+    var input = document.querySelector('.form-control');
+    var valorCelda = input.value.trim();
+
+    // Verificar si hay al menos una celda
+    var columnas = document.querySelectorAll('.col-4');
+    if (columnas.length === 0) {
+        console.log("No hay celdas para borrar.");
+        return;
+    }
+
+    // Buscar la celda que contiene el valor y eliminarla
+    columnas.forEach(function(columna) {
+        if (columna.textContent.trim() === valorCelda) {
+            columna.remove();
+            console.log("Celda borrada: " + valorCelda);
+            return;
+        }
+    });
+
+    // Si no se encuentra la celda, imprimir un mensaje de error
+    console.log("No se encontró la celda con el valor: " + valorCelda);
+     // Mostrar la cantidad actualizada de celdas
+     mostrar_cantidad_celdas();
     
 }
 
 // 5) Agregar celda y que el texto sea "contenedor" mas la posicion
-function borrar_celda(params) {
-    
+function agregar_celda() {
+    console.log("agregar celda");
+
+    // Obtener el número total de celdas
+    var totalCeldas = document.querySelectorAll('.col-4').length;
+
+    // Crear un nuevo elemento div para la nueva celda
+    var nuevaCelda = document.createElement('div');
+    nuevaCelda.classList.add('col-4', 'border');
+    nuevaCelda.textContent = "contenedor " + (totalCeldas + 1);
+
+    // Obtener el segundo elemento .row donde se agregarán las nuevas celdas
+    var fila = document.querySelectorAll('.row')[1];
+
+    // Verificar si se encontró el segundo elemento .row
+    if (!fila) {
+        console.log("No se encontró el segundo elemento .row para agregar la celda.");
+        return;
+    }
+
+    // Agregar la nueva celda al final del segundo elemento .row
+    fila.appendChild(nuevaCelda);
+
+    console.log("Nueva celda agregada: contenedor " + (totalCeldas + 1));
+     // Mostrar la cantidad actualizada de celdas
+     mostrar_cantidad_celdas();
 }
 
+
 // 6) En paralelo con las 2 anteriores, mostrar en el h1 inicial del html la cantidad de celdas actual
-function mostrar_cantidad_celdas(params) {
-    
+function mostrar_cantidad_celdas() {
+    // Obtener el número total de celdas
+    var totalCeldas = document.querySelectorAll('.col-4').length;
+
+    // Actualizar el contenido del h1 con la cantidad de celdas
+    document.querySelector('h1').innerHTML = "Cantidad de celdas: <b>" + totalCeldas + "</b>";
 }
 
